@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Эх...</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --background-color: #000000;
+            --text-color: #ffffff;
+            --glitch-duration: 2s;
+            --glitch-effect: 1s infinite;
+            --accent-color: #ffffff;
+            --border-radius: 10px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: var(--border-radius);
+            box-sizing: border-box;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            max-width: 700px;
+            width: 90%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 5em;
+            margin: 0;
+            animation: glitch var(--glitch-duration) var(--glitch-effect), fadeInText 1s 0.5s forwards;
+            text-shadow: 2px 2px red, -2px -2px blue, 2px -2px green, -2px 2px yellow;
+            opacity: 0;
+        }
+
+        p {
+            font-size: 1.3em;
+            margin-top: 20px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInText 2s 1s forwards;
+        }
+
+        .back-btn {
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 1.2em;
+            transition: transform 0.3s, background-color 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInButton 1s 2s forwards;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            background-color: #0b7dda;
+        }
+
+        .back-btn:focus {
+            outline: none;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            25% { text-shadow: -2px -2px blue; }
+            50% { text-shadow: 2px -2px green; }
+            75% { text-shadow: -2px 2px yellow; }
+            100% { text-shadow: 2px 2px red; }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInButton {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Печально</h1>
+        <p>
+            Знаешь, я долго думал, стоит ли писать это. Наверное, потому что в глубине души надеялся на другой исход. Но раз ты так решила, значит, мне остается только принять это. Я не злюсь и не виню тебя, и не хочу, чтобы ты чувствовала себя виноватой. Чувства нельзя выпросить, заставить или удержать. Они либо есть, либо их нет. Если ты не видишь нас вместе, у тебя нет тех же чувств, как и у меня, то просто таков путь. Не буду врать, что мне легко от этого. Нет. Я вложил в это всё многое - чувства, надежды, мысли о том, что будет дальше. И сейчас кажется, что внутри что-то ломается, рушится то, что я так долго берёг. Ты для меня не просто девушка, не просто человек - ты стала смыслом, светом, тем, о ком я думал, когда ложился спать и просыпался. Мне хочется верить, что время сгладит эти чувства внутри, что я смогу снова гулять ночами смотря на небо и звезды, и не думать о том, как хотел когда-то разделять эти моменты с тобой. Честно говоря, сейчас мне кажется, что я просто не знаю, что делать и как двигаться дальше. Я благодарен тебе за все. За моменты когда ты улыбалась, когда твои глаза сверкали от радости, когда ты была по настоящему искренняя со мной, за твои "Забыл про меня?", когда ты просто была рядом. Даже, если это больше не повторится, эти мгновения останутся со мной навсегда. Я не представляю, что будет дальше, как мы будем продолжать общаться после этого, как работать, ведь я тебя действительно полюбил по-настоящему. И последнее, что я хотел бы сказать: если вдруг когда-нибудь ты поймешь, что в моих словах и чувствах было что-то большее, чем просто влюбленность, то знай, что в моей душе всегда будет место, где ты останешься навсегда, даже если ты выбрала этот вариант, я всегда буду рядом и поддержу тебя в любой самой тяжелой ситуации. Прости за всё это ❤️
+        </p>
+        <button class="back-btn" onclick="window.history.back()">Вернуться назад</button>
+    </div>
+</body>
+</html>
